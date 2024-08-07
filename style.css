@@ -1,0 +1,648 @@
+     
+        body::-webkit-scrollbar {
+            width: 0; /* Ukuran scrollbar horizontal */
+            height: 0; /* Ukuran scrollbar vertical */
+        }
+
+    .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 300000;
+    background-color: #fede86;
+}
+
+.navbar-nav .nav-link {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0px 10px 0px 10px;
+    background: transparent;
+    border: none;
+    color: black;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s ease, background-color 0.3s ease, margin 0.3s ease;
+}
+
+.navbar-nav .nav-link::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0px; 
+    height: 2px;
+    width: 0;
+    background-color: #ffc506;
+    transition: 0.5s ease;
+}
+
+.navbar-nav .nav-link:hover::before {
+    width: 100%;
+}
+
+.navbar-nav .nav-link:hover {
+    margin: 0px 30px 0px 30px;
+    color: #1e1e2b;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    background-color:#ffc506;;
+    transition: 0.4s ease;
+    z-index: -1;
+}
+
+.nav-link:hover::after {
+    height: 100%;
+    transition-delay: 0.2s;
+    color: rgb(0, 0, 0);
+}
+
+
+        body {
+            background-color:rgb(240, 176, 57);
+            font-weight: 400;
+            font-size: 16px;
+            overflow-x: hidden;
+
+        }
+
+        h1 {
+            /* position: absolute; */
+            font-weight: 700;
+            font-size: 56px;
+            color: #000000;
+            text-align: center;
+        }
+
+
+        p {
+            line-height: 1.9;
+            color: #000000;
+        }
+
+        .animated-button .circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background-color: greenyellow;
+            border-radius: 50%;
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .animated-button .text {
+            position: relative;
+            z-index: 1;
+            transform: translateX(-12px);
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .animated-button:hover {
+            box-shadow: 0 0 0 0 transparent;
+            color: #212121;
+            border-radius: 12px;
+        }
+
+        button {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            outline: none;
+            border: 0;
+            vertical-align: middle;
+            text-decoration: none;
+            background: transparent;
+            padding: 0;
+            font-size: inherit;
+            font-family: inherit;
+        }
+
+        button.learn-more {
+            width: 12rem;
+            height: auto;
+        }
+
+        button.learn-more .circle {
+            transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+            position: relative;
+            display: block;
+            margin: 0;
+            width: 3rem;
+            height: 3rem;
+            background: rgb(240, 176, 57);
+            border-radius: 1.625rem;
+        }
+
+        button.learn-more .circle .icon {
+            transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background: #fff;
+        }
+
+        button.learn-more .circle .icon.arrow {
+            transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+            left: 0.625rem;
+            width: 1.125rem;
+            height: 0.125rem;
+            background: none;
+        }
+
+        button.learn-more .circle .icon.arrow::before {
+            position: absolute;
+            content: "";
+            top: -0.29rem;
+            right: 0.0625rem;
+            width: 0.625rem;
+            height: 0.625rem;
+            border-top: 0.125rem solid #fff;
+            border-right: 0.125rem solid #fff;
+            transform: rotate(45deg);
+        }
+
+        button.learn-more .button-text {
+            transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 0.75rem 0;
+            margin: 0 1rem 0 3rem; /* Mengatur margin kanan dan kiri */
+            color: rgb(240, 176, 57);
+            font-weight: 700;
+            line-height: 1.6;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        button:hover .circle {
+            width: 100%;
+        }
+
+        button:hover .circle .icon.arrow {
+            background: #fff;
+            transform: translate(1rem, 0);
+        }
+
+        button:hover .button-text {
+            color: #fff;
+        }
+        
+        /* Gaya untuk gambar latar belakang pada layar non-responsif */
+        .darken-background {
+            position: relative;
+            background-image: url('img/bg.jpg');
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 590px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 1;
+            background-attachment: fixed;
+        }
+
+
+
+
+        .darken-background h1,
+        .darken-background h3 {
+            text-align: center;
+            color: white;
+            opacity: 0.9;
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            text-shadow: 0 0 7px rgba(0, 0, 0, 0.8);
+        }
+
+        .darken-background::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Ubah alpha untuk mengatur kegelapan */
+        }
+
+        .horizontal-layout {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin: 20px 50px 100px 50px;
+        }
+
+        .card {
+            margin-top: 60px;
+            margin-bottom: 0px;
+            position: relative;
+            width: 200px;
+            height: 300px;
+            border-radius: 14px;
+            z-index: 1111;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* box-shadow: 10px 10px 60px #ffcb82, -20px -20px 60px #000000; */
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Menambahkan transisi */
+        }
+
+        .bg {
+            position: absolute;
+            width: 185px;
+            height: 285px;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(24px);
+            border-radius: 10px;
+            overflow: hidden;
+            outline: 2px solid white;
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 3;
+            text-align: center; /* Atur tata letak teks menjadi pusat */
+            color: white; /* Warna teks */
+            /* padding: 20px; */
+            font-family: 'Roboto', sans-serif; /* Menggunakan font Roboto */
+        }
+
+
+        .fotocard {
+    width: 200px; /* Lebar tetap */
+    height: 200px; /* Tinggi tetap */
+    object-fit: cover; /* Mengatur gambar untuk mengisi dan memotong kotak */
+    margin-bottom: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+
+        .card:hover {
+            background-color: rgb(105, 100, 85);
+            transform: scale(1.3); /* Mengubah skala saat hover */
+            height: 350px;
+        }
+
+        .card-content .fotocard {
+            margin-top: 15px ;
+}
+
+        .card:hover .bg {
+            height: 335px;
+            background-color: #ffff;
+        }
+
+        .card-content h4{
+            color: #000000;
+            margin-bottom: -5px;
+
+        }
+
+        .card-content .fotocard:hover {
+   
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }    
+
+
+        .card-content p {
+    display: none;
+}
+
+.card-content:hover p {
+    display: block; /* Tampilkan paragraf saat card dihover */
+    color: rgb(0, 0, 0); /* Warna teks saat dihover */
+    font-size: 12px;
+    padding: 5px;
+}
+
+
+        .blob {
+            position: absolute;
+            z-index: 1;
+            top: 90%; /* Ubah nilai ini sesuai dengan kebutuhan Anda */
+            width: 900px;
+            height: 550px;
+            border-radius: 50%;
+            background-color: rgb(255, 199, 94);
+            opacity: 1;
+            filter: blur(12px);
+            animation: blob-bounce 20s infinite ease;
+        }
+
+     
+    .cardi {
+        margin-top:50px;
+        margin-right: auto;
+        max-width: 90%;
+        height: 550px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  justify-content: right;
+  padding: 20px 0px;
+  gap: 13px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.062);
+}
+
+.cardii {
+        margin-top:50px;
+        margin-right: auto;
+        max-width: 90%;
+        height: 450px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  justify-content: right;
+  padding: 20px 0px;
+  gap: 13px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.062);
+}
+
+#cookieSvg {
+  width: 50px;
+  
+}
+
+#cookieSvg g path {
+  fill: rgb(97, 81, 81);
+}
+
+.cookieHeading {
+  font-size: 1.2em;
+  font-weight: 800;
+  color: rgb(26, 26, 26);
+}
+
+.cookieDescription {
+  text-align: center;
+  font-size: 0.7em;
+  font-weight: 600;
+  color: rgb(99, 99, 99);
+}
+
+
+.horizontal-layout ul {
+    display: flex;
+    flex-direction: column; /* Tampilkan list secara vertikal */
+    align-items: flex-start; /* Posisikan item secara kiri */
+}
+
+.horizontal-layout li {
+    margin-bottom: 10px; /* Berikan jarak antar item */
+}
+
+.horizontal-layout {
+    display: flex;
+    justify-content: space-between; /* Membuat bahan dan cara membuat berdempatan */
+    margin: 20px 50px 100px 50px;
+}
+
+.ingredients{
+    margin-left: 30px;
+}
+
+.ingredientss{
+    margin-left: 40px;
+    
+}
+
+.instructionss{
+    margin-left: -10px;
+}
+.horizontal-layout .ingredients,
+.horizontal-layout .instructions {
+    width: 4%; /* Menyesuaikan lebar untuk memberikan ruang antara bahan dan cara membuat */
+}
+
+
+
+.horizontal-layout li {
+    margin-bottom: 10px; /* Memberikan jarak antar item */
+}
+
+.cardrekomendasi {
+  position: relative;
+  margin-left:50px;
+  margin-top: 30px;
+  width: 390px;
+  height: 254px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 12px;
+  gap: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  /* color: rgb(255, 255, 255); */
+  align-items: center;
+  /* margin-top: 20px; */
+  overflow: hidden;
+}
+
+.cardrekomendasi-foto { 
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+
+.cardrekomendasi-foto:hover {
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 80%;
+  opacity: 1;
+}
+
+.heading {
+  position: absolute;
+  bottom: 25px;
+  left: 20px; 
+  z-index: 1;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.description {
+  position: absolute;
+  color: #fff;
+  bottom: 10px;
+  left: 20px; 
+  z-index: 1;
+}
+
+.cardrekomendasi-foto::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5); /* Atur warna latar belakang semi-transparan */
+  transition: background-color 0.3s ease; /* Tambahkan transisi */
+
+}
+
+.cardrekomendasi::before {
+  content: '';
+  
+  position: absolute;
+  inset: 0;
+  left: -5px;
+  margin: auto;
+  width: 395px;
+  height: 264px;
+  border-radius: 10px;
+  background: linear-gradient(-45deg, rgb(240, 198, 121) 0%, rgba(255, 255, 255, 0.5) 100%);
+  z-index: -10;
+  pointer-events: none;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cardrekomendasi::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  width:375px; /* Sesuaikan lebar dengan yang diinginkan */
+  height: 260px; /* Sesuaikan tinggi dengan yang diinginkan */
+  background: linear-gradient(-45deg, rgb(241, 176, 55) 0%, rgb(246, 204, 18) 100%);
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
+}
+
+.cardrekomendasi:hover .heading,
+.cardrekomendasi:hover .description {
+  color: #000000;
+  text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px yellow, 0 0 50px yellow, 0 0 60px yellow, 0 0 70px yellow; /* Bayangan teks */
+}
+
+.cardrekomendasi {
+    margin-bottom: 20px;
+}
+
+.row-rekomendasi {
+    margin-right: auto;
+    margin-left: -100px;
+}
+
+
+
+
+
+
+
+/* .cardrekomendasi p:not(.heading) {
+  font-size: 14px;
+}
+
+.cardrekomendasi p:last-child {
+  color: #2b2b2b;
+  font-weight: 600;
+} */
+
+
+
+.cardrekomendasi:hover::before {
+  transform: rotate(-90deg);
+  width: 270px; /* Lebar */
+  height: 400px; /* Tinggi */
+}
+
+
+/* Untuk latar belakang */
+@media (max-width: 991px) {
+    .darken-background {
+        height: auto;
+        min-height: 100vh;
+        padding: 20px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .container{
+        margin-left: 5%;
+        margin-right: 100%;
+    } 
+
+    .cardrekomendasi{
+        margin-left: 15%;
+    }
+}
+    .card {
+            /* Atur ulang lebar kartu untuk tampilan responsif */
+            width: 80%;
+        }
+    .bg {
+        width: 95%;
+    }
+
+        .fotopenjelasan{
+            /* max-width: 300px; */
+            max-width: 300px;
+            border-radius: 5px;
+            border: 5px solid #ffff;
+        }
+
+        
+        @keyframes blob-bounce {
+    0% {
+        transform: translateY(0%);
+    }
+
+    25% {
+        transform: translateY(-150%);
+    }
+
+    50% {
+        transform: translateY(5%);
+    }
+
+    75% {
+        transform: translateY(-150%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+
+.coll-lg-3 {
+    width: 33.3333%; /* 3 item per baris */
+    box-sizing: border-box; /* Termasuk padding dan border dalam lebar */
+}
+
+
+
